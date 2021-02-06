@@ -1,0 +1,48 @@
+    .top {
+        height: 8%;
+    }
+    .bot {
+        margin-top: auto;
+        display: grid;
+        height: 92%;
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(3,33%);
+    }
+    .hearder {
+        width: 100%;
+        height: 100%;
+        margin-right: -4px;
+    }
+    .left {
+        grid-row-start: 1;
+        grid-row-end: 4;
+        height: 100%;
+        overflow-y: auto;
+    }
+    .left thead th{
+        position: sticky;
+        top: 0;
+    }
+    .right1, .right2, .right3 {
+        height: 100%;
+        overflow-y: auto;
+    }
+    .right1 thead th{
+        position: sticky;
+        top: 0;
+    }
+    .right2 thead th{
+        position: sticky;
+        top: 0;
+    }
+    .right3 thead th{
+        position: sticky;
+        top: 0;
+    }
+
+    html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        font-family: 'Kanit', sans-serif;
+    }
