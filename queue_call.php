@@ -175,20 +175,101 @@ $(document).on("click", "#CallQueue", function(){
         url: "call_queue.php",
         data: {
             vn: $(this).data("vn"),
-            dap: $('#select_depart').val(),
+            dapartment: $('#select_depart').val(),
             channel: $('#select_channel').val()
         },
-        success: function (dataT) {
+        success: function(dataC){
+          function fetch_data(){  
+                $.ajax({  
+                    url:"select_queue_call.php",  
+                    method:"POST",
+                    data: {changeStatus: $('#select_depart').val(),changeChannel: $('#select_channel').val()},  
+                    success:function(data){  
+                        $('#live_queue_call').html(data);
+                        //setTimeout( function() { fetch_data();  } , 5000 );  
+                    }  
+                });  
+            }
             fetch_data();
-          if(dataT=='1'){
+
+            function fetch_dataA(){  
+              $.ajax({  
+                url:"select_a_call.php",  
+                method:"POST",
+                data: {changeStatus: $('#select_depart').val()},  
+                success:function(data){  
+                  $('#live_queue_a').html(data); 
+                  //setTimeout( function() { fetch_dataA();  } , 5000 );
+                }  
+              });  
+            }
             fetch_dataA();
-          }else if(dataT=='2'){
+
+            function fetch_dataB(){  
+              $.ajax({  
+                url:"select_b_call.php",  
+                method:"POST",
+                data: {changeStatus: $('#select_depart').val()},  
+                success:function(data){  
+                  $('#live_queue_b').html(data); 
+                  //setTimeout( function() { fetch_dataB();  } , 5000 );
+                }  
+              });  
+            }
             fetch_dataB();
-          }else if(dataT=='3'){
-            fetch_dataC();
-          }
-        },
+        }
     }); // ajax end
+});
+$(document).on("click", "#ReturnCall", function(){
+  $.ajax({
+        type: "POST",
+        url: "return_call.php",
+        data: {
+            vn: $(this).data("vn"),
+            dapartment: $('#select_depart').val(),
+            channel: $('#select_channel').val()
+        },
+        success: function(dataC){
+          function fetch_data(){  
+                $.ajax({  
+                    url:"select_queue_call.php",  
+                    method:"POST",
+                    data: {changeStatus: $('#select_depart').val(),changeChannel: $('#select_channel').val()},  
+                    success:function(data){  
+                        $('#live_queue_call').html(data);
+                        //setTimeout( function() { fetch_data();  } , 5000 );  
+                    }  
+                });  
+            }
+            fetch_data();
+
+            function fetch_dataA(){  
+              $.ajax({  
+                url:"select_a_call.php",  
+                method:"POST",
+                data: {changeStatus: $('#select_depart').val()},  
+                success:function(data){  
+                  $('#live_queue_a').html(data); 
+                  //setTimeout( function() { fetch_dataA();  } , 5000 );
+                }  
+              });  
+            }
+            fetch_dataA();
+
+            function fetch_dataB(){  
+              $.ajax({  
+                url:"select_b_call.php",  
+                method:"POST",
+                data: {changeStatus: $('#select_depart').val()},  
+                success:function(data){  
+                  $('#live_queue_b').html(data); 
+                  //setTimeout( function() { fetch_dataB();  } , 5000 );
+                }  
+              });  
+            }
+            fetch_dataB();
+        }
+  });
 });
 </script>
 </body>

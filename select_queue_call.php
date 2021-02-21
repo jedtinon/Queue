@@ -23,7 +23,7 @@
  while($row = mysqli_fetch_array($result)){  
      $output .= '  
           <tr> 
-               <td><button type="button" class="btn btn-primary btn-sm"><i class="fas fa-arrow-alt-circle-right"></i></button></td>  
+               <td><button type="button" class="btn btn-warning btn-sm" data-vn="'.$row['vn'].'" id="ReturnCall"><i class="fas fa-arrow-alt-circle-left"></i></button></td>  
                <td>'.$row["hn"].'</td>  
                <td>'.$row['name'].'</td>  
                <td>'.$row["new_queue"].'</td>

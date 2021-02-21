@@ -1,0 +1,62 @@
+    .top {
+        height: 8%;
+    }
+    .bot {
+        margin-top: auto;
+        display: grid;
+        height: 92%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .hearder {
+        width: 100%;
+        height: 100%;
+        margin-right: -4px;
+    }
+    .left1 {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        height: 100%;
+        overflow-y: auto;
+    }
+    .left2 {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        height: 100%;
+        overflow-y: auto;
+    }
+    .left1 thead th{
+        position: sticky;
+        top: 0;
+    }
+    .left2 thead th{
+        position: sticky;
+        top: 0;
+    }
+    .right1 {
+        height: 100%;
+        overflow-y: auto;
+    }
+    .right2 {
+        height: 100%;
+        overflow-y: auto;
+    }
+    .right3 {
+        height: 100%;
+        overflow-y: auto;
+    }
+    .right4 {
+        height: 100%;
+        overflow-y: auto;
+    }
+    .right thead th{
+        position: sticky;
+        top: 0;
+    }
+
+    html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        font-family: 'Kanit', sans-serif;
+    }

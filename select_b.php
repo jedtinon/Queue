@@ -30,9 +30,13 @@
                <td>'.$row["hn"].'</td>  
                <td>'.$row['name'].'</td>  
                <td>'.$row["new_queue"].'</td>
-               <td>'.$row["tim"].'</td>  
-               <td><a class="btn btn-default btn-sm" data-vn="'.$row['vn'].'" data-typeq="2" id="GenQueue"><i class="fas fa-qrcode"></i></a></td>
-          </tr>';
+               <td>'.$row["tim"].'</td>'; 
+               if($row['new_queue']!=''){
+               $output .= '<td><a class="btn btn-default btn-sm" data-vn="'.$row['vn'].'" id="PrintQueue"><i class="fas fa-qrcode"></i></a></td>';
+               }else{
+               $output .= '<td><a class="btn btn-default btn-sm" data-vn="'.$row['vn'].'" data-typeq="1" id="GenQueue"><i class="fas fa-qrcode"></i></a></td>';
+               }
+               $output .= '</tr>';
      $i++;  
 }   
  $output .= '</table>';  

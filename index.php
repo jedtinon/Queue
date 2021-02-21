@@ -122,7 +122,7 @@
                       <button type="button" class="btn btn-secondary btn-sm" onclick="RefreshData();"><i class="fas fa-sync-alt"></i> Refresh</button>
                     </div>
                 </div>
-                <div class="card-body" id="live_data_his"></div>
+                <div class="card-body p-0" id="live_data_his"></div>
             </div>
         </div>
         <div class="right1 col-lg-12">
@@ -131,7 +131,7 @@
                 <h3 class="card-title">คิวปกติทั่วไป</h3>
               </div>
               <!-- /.card-header -->
-              <div class="card-body" id="live_queue_a"></div>
+              <div class="card-body table-responsive p-0" id="live_queue_a"></div>
               <!-- /.card-body -->
             </div>
             <!-- /.card --> 
